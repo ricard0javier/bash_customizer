@@ -16,3 +16,5 @@ printf-color-config
 export-custom-system-properties
 java-8
 bash-colors
+alias-sublime
+

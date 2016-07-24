@@ -24,3 +24,10 @@ function bash-colors() {
 
 }
 
+#create alias for sublime in oreder to have the command "subl" available in the command line
+function alias-sublime() {
+  
+  log "Setting Bash alias for Sublime-Text"
+  
+  alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+}
