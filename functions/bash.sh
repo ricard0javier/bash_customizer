@@ -9,7 +9,7 @@ function bash-colors() {
   log "Setting Bash colors"
 
   # define a colored prompt 
-  export PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
+  export PS1='\[\e[0;33m\]\u\[\e[0m\]\$ '
 
   # using a colourized terminal
   export TERM="xterm-color"
@@ -26,8 +26,26 @@ function bash-colors() {
 
 #create alias for sublime in oreder to have the command "subl" available in the command line
 function alias-sublime() {
-  
-  log "Setting Bash alias for Sublime-Text"
-  
-  alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+  log "Setting Bash bin for Sublime-Text"
+  if [ ! -L /usr/local/bin/subl ]; then
+    ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+  fi
+}
+
+# Reloads the bash functions
+function .bash-reload() {
+  log "Reloading the bash functions"
+  . ~/.bash_profile
+}
+
+# Opens the bash profiles functions with sublime 
+function .bash-edit() {
+  log "Opening the bash profiles functions with sublime "
+  subl ~/.bash_profile.d
+}
+
+# Opens the hosts files with sublime 
+function .bash-hosts() {
+  log "Opening the hosts files with sublime "
+  subl /etc/hosts
 }
