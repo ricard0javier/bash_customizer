@@ -30,4 +30,14 @@ function alias-sublime() {
   log "Setting Bash alias for Sublime-Text"
   
   alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+  alias idea="/Applications/IntelliJ\ IDEA\ CE.app/Contents/MacOS/idea"
+}
+
+
+# Reloads the bash profile scripts
+function .bash-reload() {
+  
+  log "Reloading the bash profile scripts"
+  
+  . ~/.bash_profile
 }

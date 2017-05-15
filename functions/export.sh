@@ -4,11 +4,10 @@
 function export-custom-system-properties() {
 
   log "Setting custom system properties"
-
-  SUBLIME_BIN_PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-  NPM_BIN_PATH="~/.npm-packages/bin"
-
-  export PATH=$PATH:$SUBLIME_BIN_PATH
-  export PATH=$PATH:$NPM_BIN_PATH
+  
+  export ANDROID_HOME=~/Library/Android/sdk
+  export PATH=${PATH}:${ANDROID_HOME}/tools
+  export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+  export PATH="$PATH:`yarn global bin`"
 
 }
