@@ -3,7 +3,8 @@ Set of custom functions created to improve the bash experience
 
 ### To install pull the repository your home folder and run the install script:
 ```bash
-cd ~
-git pull git@github.com:ricard0javier/bash_customizer.git .bash_profile.d
-sudo sh .bash_profile.d
+mkdir ~/.bash_profile.d
+cd ~/.bash_profile.d
+git https://github.com/ricard0javier/bash_customizer.git
+sh install.sh
 ```
