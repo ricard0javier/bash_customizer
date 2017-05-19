@@ -54,21 +54,26 @@ function .docker-ps() {
 
 # Runs all the services in the docker compose file
 function .docker-up() {
-  log "Runnign all the services in the docker compose file in the background"
+  log "Running all the services in the docker compose file in the background"
 
-  printf "${POI_BLUE}Pull? ${POI_GREEN}(y/[n])${POI_NC}: "
-
+  printf "${POI_BLUE}Would you like to ${POI_GREEN}kill${POI_BLUE} the previous containes? ${POI_GREEN}(y/[n])${POI_NC}: "
   read answer
   if echo "$answer" | grep -iq "^y" ;then
-    docker-compose pull
+    docker-compose kill $@
+  fi
+
+  printf "${POI_BLUE}Pull? ${POI_GREEN}(y/[n])${POI_NC}: "
+  read answer
+  if echo "$answer" | grep -iq "^y" ;then
+    docker-compose pull $@
   fi
   
-  docker-compose up -d
-  .docker-logs
+  docker-compose up -d $@
+  .docker-logs $@
 }
 
 # Follows the logs for all the services in the docker compose file
 function .docker-logs() {
   log "Following the logs for all the services in the docker compose file"
-  docker-compose logs -f --tail 10
+  docker-compose logs -f --tail 25 $@
 }
