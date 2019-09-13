@@ -5,6 +5,6 @@ Set of custom functions created to improve the bash experience
 ```bash
 mkdir ~/.bash_profile.d
 cd ~/.bash_profile.d
-git https://github.com/ricard0javier/bash_customizer.git
+git clone https://github.com/ricard0javier/bash_customizer.git .
 sh install.sh
 ```

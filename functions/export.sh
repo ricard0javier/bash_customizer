@@ -16,5 +16,8 @@ function export-custom-system-properties() {
   export PATH=${PATH}:${ANDROID_HOME}/tools
   export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
-  export FLEX_IP=10.13.1.50
+  export FLEX_IP=$(ifconfig en0 | awk '/inet /{print $2}')
+  echo "FLEX_IP = '$FLEX_IP'"
+
+  export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
 }

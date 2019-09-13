@@ -15,7 +15,7 @@ function bash-colors() {
 
   # define a colored prompt 
   export PS1='\[\e[0;33m\]\W\[\e[0m\]\$ '
-
+  
   # using a colourized terminal
   export TERM="xterm-color"
 
