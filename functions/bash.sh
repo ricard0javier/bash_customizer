@@ -3,6 +3,11 @@
 # Sets a serie of variables and alias in order to provide a coloured experience using the terminal
 # Depends on: ./log.sh
 
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND='history -a'
+
 # improves the terminal colors
 function bash-colors() {
   
