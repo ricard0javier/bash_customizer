@@ -14,7 +14,7 @@ fi
 
 printf-color-config
 export-custom-system-properties
-java-8
+java-12
 bash-colors
 alias-sublime
 
